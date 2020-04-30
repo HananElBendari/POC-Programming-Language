@@ -2,7 +2,7 @@
 
 namespace POC.Programming.Domain.Entities
 {
-    public class ProgrammingCategory : IEntity
+    public class ProgrammingCategory : Entity
     {
         public string ProgrammingCategoryName { get; set; }
         public ICollection<ProgrammingLanguage> ProgrammingLanguages { get; set; }

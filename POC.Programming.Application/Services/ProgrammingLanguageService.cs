@@ -25,10 +25,6 @@ namespace POC.Programming.Application.Services
             return mapper.Map<List<ProgrammingLanguageDto>>(programmingLanguageList.ToList());
         }
 
-        public void AddProgrammingLanguage(ProgrammingLanguageDto entity)
-        {
-            programmingLanguageRepo.Add(mapper.Map<ProgrammingLanguage>(entity));
-        }
         public void UpdateProgrammingLanguage(ProgrammingLanguageDto entity)
         {
             programmingLanguageRepo.Update(mapper.Map<ProgrammingLanguage>(entity));
@@ -37,18 +33,6 @@ namespace POC.Programming.Application.Services
         public ProgrammingLanguageDto GetProgrammingLanguageById(int id)
         {
             return mapper.Map<ProgrammingLanguageDto>(programmingLanguageRepo.Get(id));
-        }
-
-        public async Task<int> GetNumberOfHitsByProgrammingLanguageIdAsync(int programmingLanguageId)
-        {
-            var progLanguage = await programmingLanguageRepo.GetAsync(programmingLanguageId);
-            return progLanguage.NumberOfHits;
-        }
-
-        public async Task<List<ProgrammingLanguageDto>> GetAllAsync()
-        {
-            var programmingLanguageList = await programmingLanguageRepo.GetAllIncludingAsync(e => e.ProgrammingCategory);
-            return mapper.Map<List<ProgrammingLanguageDto>>(programmingLanguageList.ToList());
         }
     }
 }

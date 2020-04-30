@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace POC.Programming.Infrastructure.Repository
 {
-    public class Repository<T> : IRepository<T> where T : IEntity
+    public class Repository<T> : IRepository<T> where T : Entity
     {
         private readonly ProgrammingContext context;
         private readonly DbSet<T> entities;
@@ -26,27 +26,41 @@ namespace POC.Programming.Infrastructure.Repository
 
         public Task<IEnumerable<T>> GetAllAsync()
         {
-            return Task.FromResult(All.AsEnumerable());
+            return Task.Run(() =>
+            {
+                return All.AsEnumerable();
+            });
         }
 
         public Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> predicate)
         {
-            return Task.FromResult(All.Where(predicate));
+            return Task.Run(() =>
+            {
+                return All.Where(predicate);
+            });
+        }
+
+        public Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate)
+        {
+            return All.SingleOrDefaultAsync(predicate);
         }
 
         public Task<IQueryable<T>> GetAllIncludingAsync(params Expression<Func<T, object>>[] propertySelectors)
         {
-            var query = All;
-
-            if (propertySelectors != null && propertySelectors.Length > 0)
+            return Task.Run(() =>
             {
-                foreach (var propertySelector in propertySelectors)
-                {
-                    query = query.Include(propertySelector);
-                }
-            }
+                var query = All;
 
-            return Task.FromResult(query);
+                if (propertySelectors != null && propertySelectors.Length > 0)
+                {
+                    foreach (var propertySelector in propertySelectors)
+                    {
+                        query = query.Include(propertySelector);
+                    }
+                }
+
+                return query;
+            });
         }
 
         public T Get(int id)

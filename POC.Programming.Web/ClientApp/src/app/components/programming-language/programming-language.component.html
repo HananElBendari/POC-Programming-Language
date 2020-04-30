@@ -1,0 +1,34 @@
+<p> Avaliable Categories : {{numberOfAvaliableCategories}} </p>
+<ul>
+    <li *ngFor="let category of programmingCategoryList$ | async">
+        <ng-container>
+            <a [routerLink]="">
+                <em class="material-icons" (click)="getByCategoryId(category.id)"
+                    *ngIf="!showMoreCategory[category.id]"> keyboard_arrow_down </em>
+                <em class="material-icons" (click)="showLessCategory(category.id)"
+                    *ngIf="showMoreCategory[category.id]"> keyboard_arrow_up </em>
+            </a>
+            <span> {{ category.programmingCategoryName }} </span>
+        </ng-container>
+        <ul *ngIf="showMoreCategory[category.id]">
+            <li *ngFor="let progLanguage of programmingLanguageList[category.id]">
+                <ng-container>
+                    <a [routerLink]="">
+                        <em class="material-icons" (click)="getProgrammingLanguageDetailsById(progLanguage.id)"
+                            *ngIf="!showMoreProgrammingLanguage[progLanguage.id]"> keyboard_arrow_down </em>
+                        <em class="material-icons" (click)="showLessProgrammingLanguage(progLanguage.id)"
+                            *ngIf="showMoreProgrammingLanguage[progLanguage.id]"> keyboard_arrow_up </em>
+                    </a>
+                    <span> {{ progLanguage.programmingLanguageName }} </span>
+                    <ul *ngIf="showMoreProgrammingLanguage[progLanguage.id]">
+                        <li>
+                            <app-programming-language-details [numberOfHits]="progLanguage.numberOfHits"
+                                [programmingLanguageDetails]="progLanguageDetails[progLanguage.id]">
+                            </app-programming-language-details>
+                        </li>
+                    </ul>
+                </ng-container>
+            </li>
+        </ul>
+    </li>
+</ul>

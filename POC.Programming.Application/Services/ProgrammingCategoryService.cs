@@ -17,7 +17,7 @@ namespace POC.Programming.Application.Services
             programmingCategoryRepo = _programmingCategoryRepo;
             mapper = _mapper;
         }
-        public async Task<int> NumberOfAvaliableCategories()
+        public async Task<int> GetNumberOfAvaliableCategoriesAsync()
         {
             return await programmingCategoryRepo.Count();
         }

@@ -1,8 +1,6 @@
-﻿using System.Net.Http.Headers;
-
-namespace POC.Programming.Contract.Request
+﻿namespace POC.Programming.Contract.Request
 {
-    public class ErrorRequest 
+    public class ErrorRequest
     {
         public string Error { get; set; }
         public string Message { get; set; }

@@ -2,7 +2,7 @@
 {
     public class ProgrammingLanguageDetailsDto
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string UserIp { get; set; }
         public bool? Like { get; set; }
         public int ProgrammingLanguageId { get; set; }

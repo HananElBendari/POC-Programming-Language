@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Programming.Infrastruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Programming.Application", "POC.Programming.Application\POC.Programming.Application.csproj", "{F5A5A6A0-63BE-4E91-813B-6391264A260F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Programming.Contract", "POC.Programming.Contract\POC.Programming.Contract.csproj", "{847835C7-5381-40E7-A409-73CB3C8A3DC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Programming.Contract", "POC.Programming.Contract\POC.Programming.Contract.csproj", "{847835C7-5381-40E7-A409-73CB3C8A3DC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Programming.Web", "Web\POC.Programming.Web.csproj", "{3286D5ED-87E8-4F5F-A125-66D6AB2EE2E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Programming.Web", "POC.Programming.Web\POC.Programming.Web.csproj", "{3286D5ED-87E8-4F5F-A125-66D6AB2EE2E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Programming.ApplicationTests", "POC.Programming.ApplicationTests\POC.Programming.ApplicationTests.csproj", "{7510D9B6-BDFD-4D0E-B9A2-7A74445182E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{3286D5ED-87E8-4F5F-A125-66D6AB2EE2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3286D5ED-87E8-4F5F-A125-66D6AB2EE2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3286D5ED-87E8-4F5F-A125-66D6AB2EE2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7510D9B6-BDFD-4D0E-B9A2-7A74445182E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7510D9B6-BDFD-4D0E-B9A2-7A74445182E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7510D9B6-BDFD-4D0E-B9A2-7A74445182E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7510D9B6-BDFD-4D0E-B9A2-7A74445182E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

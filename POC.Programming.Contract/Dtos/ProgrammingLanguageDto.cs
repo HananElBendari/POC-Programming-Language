@@ -2,7 +2,7 @@
 {
     public class ProgrammingLanguageDto
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string ProgrammingLanguageName { get; set; }
         public int ProgrammingCategoryId { get; set; }
         public int NumberOfHits { get; set; }

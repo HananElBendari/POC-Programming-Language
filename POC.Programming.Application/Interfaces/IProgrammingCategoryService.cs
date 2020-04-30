@@ -6,7 +6,7 @@ namespace POC.Programming.Application.Interfaces
 {
     public interface IProgrammingCategoryService
     {
-        Task<int> NumberOfAvaliableCategories();
+        Task<int> GetNumberOfAvaliableCategoriesAsync();
         Task<List<ProgrammingCategoryDto>> GetAllAsync();
     }
 }
